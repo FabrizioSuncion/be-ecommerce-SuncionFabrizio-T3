@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS productos (
+  id BIGSERIAL PRIMARY KEY,
+  nombre VARCHAR(150) NOT NULL,
+  categoria VARCHAR(100) NOT NULL,
+  precio_compra NUMERIC(10,2) NOT NULL,
+  precio_venta NUMERIC(10,2) NOT NULL,
+  stock INT NOT NULL,
+  marca VARCHAR(100),
+  codigo_barras VARCHAR(50),
+  fecha_ingreso DATE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS usuarios (
+  id BIGSERIAL PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  rol VARCHAR(30) NOT NULL DEFAULT 'ROLE_USER'
+);
